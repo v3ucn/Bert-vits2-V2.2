@@ -31,6 +31,8 @@ from re_matching import cut_sent
 
 from config import config
 
+from colabcode import ColabCode
+
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 
@@ -661,6 +663,11 @@ if __name__ == "__main__":
     logger.info(f"api文档地址 http://127.0.0.1:{config.server_config.port}/docs")
     if os.path.isdir(StaticDir):
         webbrowser.open(f"http://127.0.0.1:{config.server_config.port}")
-    uvicorn.run(
-        app, port=config.server_config.port, host="0.0.0.0", log_level="warning"
-    )
+
+    cc = ColabCode(port=5000, code=False)
+
+    cc.run_app(app=app)
+    
+    # uvicorn.run(
+    #     app, port=config.server_config.port, host="0.0.0.0", log_level="warning"
+    # )
