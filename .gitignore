@@ -160,7 +160,6 @@ cython_debug/
 #.idea/
 
 .DS_Store
-/models
 /logs
 
 filelists/*
@@ -168,7 +167,7 @@ filelists/*
 
 /*.yml
 !/default_config.yml
-/Web/
+
 /emotional/*/*.bin
 /bert/*/*.bin
 /bert/*/*.h5
@@ -180,6 +179,6 @@ extract_list.py
 dataset
 
 Model
-raw/
+
 logs/
 
